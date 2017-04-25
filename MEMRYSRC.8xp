@@ -252,8 +252,9 @@ End
 Goto DRAWCURSOR
 Lbl YOUWON
 FillScreen(24
-SetTextScale(20,20
-PrintString(2,2,"YOU WON!!!
+SetTextScale(2,2
+SetTextFGColor(231
+PrintStringXY(2,2,"YOU WON!!!
 Pause 
 det(1
 Return
