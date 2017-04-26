@@ -1,6 +1,6 @@
 [i]MEMORY
-Begin 
 CompilePrgm(MEMSPRTS
+Begin
 Lbl START
 For(A,1,36
 	1+remainder(rand,A->B
@@ -29,7 +29,7 @@ X->C
 Y->D
 Lbl DRAWCURSOR
 If F=0
-	SetColor(2,24
+	SetColor(24
 	Rectangle_NoClip(A-2,B-2,34,34
 	Rectangle_NoClip(A-1,B-1,32,32
 End
@@ -261,7 +261,7 @@ SetTextScale(4,4
 PrintStringXY("YOU WON!!",2,2
 SetTextScale(2,2
 PrintStringXY("1) Play Again",2,45
-PrintStringXY("2) Quit
+PrintStringXY("2) Quit",2,65
 Lbl REPEAT
 Repeat K
 	getKey->K
