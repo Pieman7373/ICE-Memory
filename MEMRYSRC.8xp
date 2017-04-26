@@ -1,7 +1,11 @@
 [i]MEMORY
-Begin
+Begin 
 CompilePrgm(MEMSPRTS
-{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36}->L1
+For(A,1,36
+	1+remainder(rand,A->B
+	L1(B->L1(A
+	A->L1(B
+End
 Lbl DRAWCARDGRID
 50->C->X
 15->D->Y
@@ -224,7 +228,6 @@ End
 N+1->N
 SetColor(24
 FillRectangle(0,0,40,40
-//lines 225 and 226 are for debugging
 ScaledSprite_NoClip(S-1,X,Y,6,6
 If N=2
 	0->N
@@ -252,9 +255,9 @@ End
 Goto DRAWCURSOR
 Lbl YOUWON
 FillScreen(24
-SetTextScale(2,2
 SetTextFGColor(231
-PrintStringXY(2,2,"YOU WON!!!
+SetTextScale(2,2
+PrintStringXY(2,2,"YOU WON
 Pause 
 det(1
 Return
