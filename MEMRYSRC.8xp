@@ -1,6 +1,7 @@
 [i]MEMORY
 Begin 
 CompilePrgm(MEMSPRTS
+Lbl START
 For(A,1,36
 	1+remainder(rand,A->B
 	L1(B->L1(A
@@ -256,8 +257,21 @@ Goto DRAWCURSOR
 Lbl YOUWON
 FillScreen(24
 SetTextFGColor(231
+SetTextScale(4,4
+PrintStringXY("YOU WON!!",2,2
 SetTextScale(2,2
-PrintStringXY(2,2,"YOU WON
-Pause 
+PrintStringXY("1) Play Again",2,45
+PrintStringXY("2) Quit
+Lbl REPEAT
+Repeat K
+	getKey->K
+End
+If K=34
+	Goto START
+End
+If K=26
 det(1
+Return
+End
+Goto REPEAT
 Return
